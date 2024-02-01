@@ -27,7 +27,11 @@ pipeline {
                 sh 'terraform fmt'
             }
         }     
-
+        stage('Terraform Validate') {
+            steps {
+                sh 'terraform validate'
+            }
+        }
         stage('Plan') {
             steps {
                 sh 'terraform plan -out tfplan'
