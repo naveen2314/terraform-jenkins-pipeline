@@ -22,6 +22,12 @@ pipeline {
                 sh 'terraform init'
             }
         }
+        stage('Terraform Fmt') {
+            steps {
+                sh 'terraform fmt'
+            }
+        }     
+
         stage('Plan') {
             steps {
                 sh 'terraform plan -out tfplan'
