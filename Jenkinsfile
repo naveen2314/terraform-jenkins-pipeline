@@ -44,6 +44,11 @@ pipeline {
                     image 'aquasec/tfsec'
                     reuseNode true
                 }
+                steps {
+                    sh '''
+                    tfsec . --no-color
+                    '''
+                }
 
             }
         }
