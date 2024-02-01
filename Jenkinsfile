@@ -38,18 +38,10 @@ pipeline {
                 sh 'terraform show -no-color tfplan > tfplan.txt'
             }
         }
-        stage('TF_SCAN'){
-            agent {
-                docker {
-                    image 'aquasec/tfsec'
-                    reuseNode true
-                }
-                steps {
-                    sh '''
-                    tfsec . --no-color
-                    '''
-                }
-
+        
+        stage('PlTF_SCAN') {
+            steps {
+                sh 'tfsec .  --no-color'
             }
         }
         stage('Apply / Destroy') {
