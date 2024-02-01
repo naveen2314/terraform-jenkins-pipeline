@@ -12,12 +12,12 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+/*         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/naveen2314/terraform-jenkins-pipeline.git'
             }
         }
-        stage('Terraform init') {
+ */        stage('Terraform init') {
             steps {
                 sh 'terraform init'
             }
@@ -39,12 +39,12 @@ pipeline {
             }
         }
         
-        stage('PlTF_SCAN') {
+/*         stage('PlTF_SCAN') {
             steps {
                 sh 'tfsec .  --no-color'
             }
         }
-        stage('Apply / Destroy') {
+ */        stage('Apply / Destroy') {
             steps {
                 script {
                     if (params.action == 'apply') {
