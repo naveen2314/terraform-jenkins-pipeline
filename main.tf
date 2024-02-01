@@ -10,6 +10,7 @@ resource "aws_instance" "foo" {
   }
 }
 
+#this is for adding backend statefile
 terraform {
   backend "s3" {
     bucket = "iac-pipeline-backend"
