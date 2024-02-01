@@ -10,7 +10,7 @@ resource "aws_instance" "foo" {
   }
 }
 
-#this is for adding backend statefile
+#this is for adding backend statefile. New addintion after webhook.
 terraform {
   backend "s3" {
     bucket = "iac-pipeline-backend"
